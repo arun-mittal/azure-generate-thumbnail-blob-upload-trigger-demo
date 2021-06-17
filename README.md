@@ -98,7 +98,7 @@ Sample Response
 
 ```
 {
-  "appId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxx",
+  "appId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "displayName": "myServicePrincipal",
   "name": "http://myServicePrincipal",
   "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
