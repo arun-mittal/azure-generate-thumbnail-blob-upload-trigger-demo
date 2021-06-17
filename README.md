@@ -1,4 +1,4 @@
-# Azure-Generate-Thumbnail-Blob-Upload-Trigger
+# Azure-Generate-Thumbnail-Blob-Upload-Trigger-Demo
 
 The Blob storage trigger starts a function when a new or updated blob is detected. The blob contents are provided as input to the function.
 
@@ -23,6 +23,8 @@ The Azure Blob storage trigger requires a general-purpose storage account. Stora
 With blob upload triggers you can leverage the advanced capabilities of Azure functions inside of your Azure blob storage. A common requirement is to shrink the size of an image after it is uploaded so it can be used in reports or returned to the app in a smaller size to reduce the bandwidth needed.
 
 This repository contains code to deploy an example of how a blob trigger may be used to process images that are uploaded to a container hosted in an Azure stroage account and saved in another container after processing. The diagram below shows the infrastrucutre setup.
+
+![](https://raw.githubusercontent.com/arun-mittal/azure-generate-thumbnail-blob-upload-trigger-demo/master/images/blob-upload-trigger-architecture.jpg)
 
 # Cloning this Repository
 
