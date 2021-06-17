@@ -87,6 +87,19 @@ resource "azurerm_storage_container" "container" {
   container_access_type = var.containers_list[count.index].access_type
 }
 
+#----------------------
+# Application Insights
+#----------------------
+resource "azurerm_application_insights" "fa" {
+  depends_on = [
+    azurerm_resource_group.rg
+  ]
+  name                = var.application_insights_name
+  location            = var.location
+  resource_group_name = lower(var.resource_group_name)
+  application_type    = "other"
+}
+
 #--------------------------
 # Create app service plan
 #--------------------------
@@ -124,6 +137,7 @@ resource "azurerm_function_app" "fa" {
   app_settings = {
     FUNCTIONS_EXTENSION_VERSION = "~3"
     FUNCTIONS_WORKER_RUNTIME = "dotnet"
+    APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.fa.instrumentation_key
   }
 
   site_config {

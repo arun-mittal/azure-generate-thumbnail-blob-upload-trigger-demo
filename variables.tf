@@ -101,6 +101,11 @@ variable "app_settings" {
   default     = {}
 }
 
+variable "application_insights_name" {
+  description = "Name of appilcation insights to be created."
+  default     = "ai-blob-upload-trigger"
+}
+
 variable "cors_allowed_origins" {
   description = "Allowed origins (CORS) for the Function App."
   type        = list(string)
