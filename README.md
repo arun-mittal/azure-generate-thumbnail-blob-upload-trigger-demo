@@ -22,7 +22,7 @@ The Azure Blob storage trigger requires a general-purpose storage account. Stora
 
 With blob upload triggers you can leverage the advanced capabilities of Azure functions inside of your Azure blob storage. A common requirement is to shrink the size of an image after it is uploaded so it can be used in reports or returned to the app in a smaller size to reduce the bandwidth needed.
 
-This repository contains code to deploy an example of how a blob trigger may be used to process images that are uploaded to a container hosted in an Azure stroage account and saved in another container after processing. The diagram below shows the infrastrucutre setup.
+This repository contains code to deploy an example of how a blob trigger may be used to process images that are uploaded to a container hosted in an Azure storage account and saved in another container after processing. The diagram below shows the infrastructure setup.
 
 ![](https://raw.githubusercontent.com/arun-mittal/azure-generate-thumbnail-blob-upload-trigger-demo/master/images/blob-upload-trigger-architecture.jpg)
 
@@ -88,7 +88,7 @@ In this response, the `id` is the subscription Id and `tenantId` is the tenant I
 
 If you have already have a service principal created and know the client Id and client secret, you can skip this step. Otherwise follow the steps below to create one.
 
-Run the create service principal command. You will need to substitute the \<service-principal-name\> with a name that that you wish to call your service principal and \<subscription-id\> with the subscrpition Id that you noted previously.
+Run the create service principal command. You will need to substitute the \<service-principal-name\> with a name that that you wish to call your service principal and \<subscription-id\> with the subscription Id that you noted previously.
 
 ```
 az ad sp create-for-rbac --name "<service-principal-name>" --role Contributor --scopes "/subscriptions/<Subscription-Id>"
