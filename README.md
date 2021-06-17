@@ -149,7 +149,7 @@ Then run the init command to initialise the working directory.
 terraform init
 ```
 
-It is suggested to leave the default variable values in the ariables&#46;tf file. Only update these if absolutely necessary.
+It is suggested to leave the default variable values in the variables&#46;tf file. Only update these if absolutely necessary.
 
 The solution can then be deployed to Azure using the apply command.
 ```
