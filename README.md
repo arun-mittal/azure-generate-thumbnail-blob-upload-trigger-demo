@@ -2,7 +2,7 @@
 
 The Blob storage trigger starts a function when a new or updated blob is detected. The blob contents are provided as input to the function.
 
-The Azure Blob storage trigger requires a general-purpose storage account. Storage V2 accounts with hierarchical namespaces are also supported. To use a blob-only account, or if your application has specialized needs, review the alternatives to using this trigger.
+The Azure Blob storage trigger requires a general-purpose storage account. Storage V2 accounts with hierarchical namespaces are also supported.
 
 # Table of Contents
 1. [Overview](#overview)
