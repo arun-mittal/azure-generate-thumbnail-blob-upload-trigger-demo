@@ -160,7 +160,7 @@ terraform apply -auto-approve
 
 To test the deployed solution, login to Azure Portal and upload an image to the 'rawimages' container, hosted in the storage account, that has a '.jpg', '.png' or '.bmp' extension.
 
-You should see that after the Azure Function App triggers, the processes images should be loacted in 'processedimages' whilst leaving the original image untouched. Note that sometime the Auzre fuction can take some time to trigger so you may have to be patient.
+You should see that after the Azure Function App triggers, the processed image should be loacted in 'processedimages' whilst leaving the original image untouched. Note that sometime the Auzre fuction can take some time to trigger so you may have to be patient.
 
 # Teardown
 
