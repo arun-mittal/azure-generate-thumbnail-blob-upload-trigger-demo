@@ -135,9 +135,17 @@ resource "azurerm_function_app" "fa" {
   https_only                 = true
 
   app_settings = {
-    FUNCTIONS_EXTENSION_VERSION = "~3"
-    FUNCTIONS_WORKER_RUNTIME = "dotnet"
+    FUNCTIONS_EXTENSION_VERSION    = "~3"
+    FUNCTIONS_WORKER_RUNTIME       = "dotnet"
     APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.fa.instrumentation_key
+  }
+
+  source_control {
+    branch             = "master"
+    manual_integration = true
+    repo_url           = "https://github.com/arun-mittal/azure-generate-thumbnail-blob-upload-trigger"
+    rollback_enabled   = false
+    use_mercurial      = false
   }
 
   site_config {
@@ -145,17 +153,5 @@ resource "azurerm_function_app" "fa" {
     cors {
       allowed_origins = var.cors_allowed_origins
     }
-  }
-}
-
-#-----------------------------
-# Deploy code to function app
-#-----------------------------
-resource "null_resource" "deploy_function" {
-  depends_on = [
-    azurerm_function_app.fa
-  ]
-  provisioner "local-exec" {
-    command = join("", ["az functionapp deployment source config --ids ", azurerm_function_app.fa.id, " --repo-url https://github.com/arun-mittal/azure-generate-thumbnail-blob-upload-trigger", " --branch master --manual-integration"])
   }
 }

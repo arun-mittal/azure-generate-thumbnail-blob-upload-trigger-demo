@@ -66,12 +66,12 @@ output "containers" {
   value       = { for c in azurerm_storage_container.container : c.name => c.id }
 }
 
-output "instrumentation_key" {
+output "application_insights_instrumentation_key" {
   description = "The Instrumentation Key for this Application Insights component."
   value = azurerm_application_insights.fa.instrumentation_key
 }
 
-output "app_id" {
+output "application_insights_app_id" {
   description = "The App ID associated with this Application Insights component."
   value = azurerm_application_insights.fa.app_id
 }
