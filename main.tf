@@ -135,8 +135,8 @@ resource "azurerm_function_app" "fa" {
   https_only                 = true
 
   app_settings = {
-    FUNCTIONS_EXTENSION_VERSION = "~3"
-    FUNCTIONS_WORKER_RUNTIME = "dotnet"
+    FUNCTIONS_EXTENSION_VERSION    = "~3"
+    FUNCTIONS_WORKER_RUNTIME       = "dotnet"
     APPINSIGHTS_INSTRUMENTATIONKEY = azurerm_application_insights.fa.instrumentation_key
   }
 
